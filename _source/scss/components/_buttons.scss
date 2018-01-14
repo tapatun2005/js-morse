@@ -1,0 +1,41 @@
+// BUTTONS
+// -----------
+
+.btns {
+	@extend %fx;
+}
+
+.btn {
+	padding: 10px 20px;
+	color: $yellow;
+	background: $black;
+	font-size: 1.2em;
+	font-family: $font-primary;
+	cursor: pointer;
+	margin: 0 10px 10px 0;
+}
+
+.close {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 40px;
+	right:0;
+	cursor: pointer;
+	&:before, 
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		background: $black;
+		top:50%;
+		left:50%;
+	}
+	&:before {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+	&:after {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+}

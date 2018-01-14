@@ -1,0 +1,20 @@
+// HEADER
+// ---------------------
+
+header {
+	@extend %fx;
+	@extend %fx--between;
+	background: $white;
+	position: fixed;
+	width: 100%;
+	padding: 10px 20px;
+	box-shadow: 0 0 5px rgba($black, .2);
+}
+
+.socials {
+	width: 50%;
+}
+
+.logo {
+	white-space: nowrap;
+}

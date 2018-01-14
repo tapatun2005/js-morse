@@ -1,0 +1,20 @@
+// FORMS
+// -----------------
+
+textarea {
+	width: 100%;
+	min-width: 100%;
+	background: none;
+	border: none;
+	border-top: 4px solid $black;
+	border-bottom: 4px solid $black;
+	padding: 20px 100px 20px 20px;
+	height: 150px;
+	font-size: 2em;
+	font-family: $font-primary;
+	color: $black;
+	margin: 20px 0;
+	&.is-hidden {
+		display: none;
+	}
+}

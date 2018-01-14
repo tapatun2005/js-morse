@@ -1,0 +1,12 @@
+.title {
+	@extend %fx;
+	@extend %al--center;
+	@extend %fx--wrap;
+	font-size: 4em;
+	margin: 0;
+	span {
+		font-size: .5em;
+		margin-left: 10px;
+		white-space: nowrap;
+	}
+}

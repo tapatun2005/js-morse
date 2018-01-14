@@ -1,0 +1,38 @@
+doctype html  
+html(lang='en')  
+	head
+		link(rel="stylesheet", href="/css/styles.min.css")
+	body
+		<div id="fb-root"></div>
+		script.
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		header
+			.socials
+				.fb-like(data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false")
+				.gplus
+			.logo - .- .-.. -.- / .. -. / -.-. --- -.. .
+		main
+			h1.title Talk in code #[span - .- .-.. -.- / .. -. / -.-. --- -.. .]
+			p Translate your message into Morse Code and share it with your friends.
+
+			.box
+				textarea(placeholder="Enter your message to be coded here")#message
+				span.close
+
+			button#submit.btn Translate my message to morse code
+			.btns#share.is-hidden
+				a(href="#").btn Facebook it
+				a(href="#").btn Tweet it
+				a(href="#").btn G+ it
+
+
+		script(src="/js/app.min.js")
+
+
+
