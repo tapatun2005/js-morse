@@ -34,7 +34,7 @@ html(lang='en')
 		header
 			.socials
 				.fb-like(data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false")
-				.gplus
+				.g-plus(data-action="share" data-annotation="bubble")
 			.logo - .- .-.. -.- / .. -. / -.-. --- -.. .
 		main
 			h1.title Talk in code #[span - .- .-.. -.- / .. -. / -.-. --- -.. .]
@@ -48,9 +48,9 @@ html(lang='en')
 			.btns#share.is-hidden
 				a(href="#").btn#facebook Facebook it
 				a(href="#").btn#twitter Tweet it
-				a(href="#").btn#gplus G+ it
+				a(href="https://plus.google.com/share?url=https://games.lottery.co.uk/" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;").btn#gplus G+ it
 
-
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		script(src="/js/app.min.js")
 
 

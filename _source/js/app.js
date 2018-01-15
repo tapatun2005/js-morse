@@ -68,6 +68,11 @@ $('#twitter').addEventListener('click', (e) =>{
 });
 
 
+$('#gplus').addEventListener('click', (e) =>{
+    
+});
+
+
 
 
 
