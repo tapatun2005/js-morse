@@ -1,9 +1,20 @@
 doctype html  
 html(lang='en')  
 	head
+		meta(charset="utf-8")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title Talk in code
+		meta(name="description" content="Translate your message into Morse Code and share it with your friends.")
 		link(rel="stylesheet", href="/css/styles.min.css")
+		//- OpenGraph
+		meta(property="og:url" content="...")
+		meta(property="og:type" content="website")
+		meta(property="og:title" content="Talk in Code")
+		meta(property="og:image" content="...")
+		meta(property="og:description" content="Translate your message into Morse Code and share it with your friends.")
 	body
-		<div id="fb-root"></div>
+		#fb-root
 		script.
 			(function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0];

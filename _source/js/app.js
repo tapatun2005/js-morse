@@ -29,7 +29,7 @@ for(let i = 0; i < close.length; i++) {
 
 function translate(sentence) {
 	return sentence.split('').map(function(e){ 
-        		return alphabet[e.toLowerCase()] || '';
+        		return alphabet[e.toLowerCase()] || '/';
    			}).join(' ').replace(/ +/g, ' ');
 }
 
