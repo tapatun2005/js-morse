@@ -34,11 +34,13 @@ html(lang='en')
 		header
 			.socials
 				.fb-like(data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false")
-				.g-plus(data-action="share" data-annotation="bubble")
+				a(href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false")
+				.g-follow(data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/100578092531780031105" data-rel="publisher")
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			.logo - .- .-.. -.- / .. -. / -.-. --- -.. .
 		main
 			h1.title Talk in code #[span - .- .-.. -.- / .. -. / -.-. --- -.. .]
-			p Translate your message into Morse Code and share it with your friends.
+			p Translate your message into Morse Code and share it with your friends.</div>
 
 			.box
 				textarea(placeholder="Enter your message to be coded here")#message
@@ -52,6 +54,3 @@ html(lang='en')
 
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		script(src="/js/app.min.js")
-
-
-
