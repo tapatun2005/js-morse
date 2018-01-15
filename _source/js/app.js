@@ -43,7 +43,7 @@ $('#facebook').addEventListener('click', (e)=>{
       link: "http://localhost:3002/",
       caption: "Talk in Code",
       description: "Tak in Code " + message.value,
-      picture: "image"
+      picture: "http://weknowyourdreams.com/single/picture/picture-12"
     });
 });
 
