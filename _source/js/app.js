@@ -9,7 +9,8 @@ var alphabet = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': 
 
 // Translate
 // ---------------------
-$('#submit').addEventListener('click', () => {
+$('#submit').addEventListener('click', (e) => {
+  e.preventDefault();
 	if(message.value != ""){
 		var text = translate(message.value);
 		message.value = text;
@@ -37,20 +38,25 @@ function translate(sentence) {
 // --------------------------------
 $('#facebook').addEventListener('click', (e)=>{
     e.preventDefault();
+
     FB.ui({
-      method: 'feed',
-      name: "Talk in Code",
-      link: "http://localhost:3002/",
-      caption: "Talk in Code",
-      description: "Tak in Code " + message.value,
-      picture: "http://weknowyourdreams.com/single/picture/picture-12"
-    });
+      method: 'share_open_graph',
+      action_type: 'og.shares',
+      action_properties: JSON.stringify({
+        object: {
+          'og:url': "https://s3.amazonaws.com/js-morse-1",
+          'og:title': "Talk in Code",
+          'og:description': message.value
+        }
+      })
+    },
+    function (response) {});
 });
 
 $('#twitter').addEventListener('click', (e) =>{
     e.preventDefault();
-    var text = "Talk in code " + message.value;
-    var url = "http://localhost:3002/";
+    var url = location.href;
+    var text = message.value + " translate it at";
     $('#twitter').setAttribute('href', 'https://twitter.com/intent/tweet?text='+ text + "&url=" + url);
     var width  = 575,
         height = 400,

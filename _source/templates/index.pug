@@ -8,10 +8,10 @@ html(lang='en')
 		meta(name="description" content="Translate your message into Morse Code and share it with your friends.")
 		link(rel="stylesheet", href="css/styles.min.css")
 		//- OpenGraph
-		meta(property="og:url" content="...")
+		meta(property="og:url" content="https://s3.amazonaws.com/js-morse-1/")
 		meta(property="og:type" content="website")
 		meta(property="og:title" content="Talk in Code")
-		meta(property="og:image" content="...")
+		meta(property="og:image" content="https://s3.amazonaws.com/js-morse-1/images/talkincode1.jpg")
 		meta(property="og:description" content="Translate your message into Morse Code and share it with your friends.")
 	body
 		script.
@@ -33,10 +33,10 @@ html(lang='en')
 			}(document, 'script', 'facebook-jssdk'));
 		header
 			.socials
-				.fb-like(data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false")
+				.fb-like(data-href="https://s3.amazonaws.com/js-morse-1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false")
 				a(href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false")
-				.g-follow(data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/100578092531780031105" data-rel="publisher")
-				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				g:plusone(href="https://s3.amazonaws.com/js-morse-1/index.html")
+				script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
 			.logo - .- .-.. -.- / .. -. / -.-. --- -.. .
 		main
 			h1.title Talk in code #[span - .- .-.. -.- / .. -. / -.-. --- -.. .]
@@ -50,7 +50,7 @@ html(lang='en')
 			.btns#share.is-hidden
 				a(href="#").btn#facebook Facebook it
 				a(href="#").btn#twitter Tweet it
-				a(href="https://plus.google.com/share?url=https://games.lottery.co.uk/" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;").btn#gplus G+ it
+				a(href="https://plus.google.com/share?url=https://s3.amazonaws.com/js-morse-1/index.html" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;").btn#gplus G+ it
 
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		script(src="https://apis.google.com/js/platform.js" async defer)
 		script(src="js/app.min.js")
