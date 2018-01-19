@@ -49,11 +49,11 @@ html(lang='en')
 
 		//- Main
 		//- -------------------
-		main
+		.main
 			.box
 				h1.title Talk in code #[span - .- .-.. -.- / .. -. / -.-. --- -.. .]
-				p Translate your message into Morse Code and share it with your friends.</div>
-
+				p Translate your message into Morse Code and share it with your friends.
+			
 			.box.box--nopadding
 				textarea(placeholder="Enter your message to be coded here")#message
 				span.close
@@ -63,7 +63,7 @@ html(lang='en')
 				.btns#share.is-hidden
 					a(href="#" title="Facebook").btn#facebook Facebook it
 					a(href="#" title="Twitter").btn#twitter Tweet it
-					a(href="#").btn#gplus G+ it
+					a(href="#" data-gapiattached="true").btn#gplus G+ it
 		//- SCripts
 		//- -------------------
 		script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
