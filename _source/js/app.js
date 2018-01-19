@@ -78,14 +78,13 @@ var options = {
     calltoactiondeeplinkid: '/pages/create'
   };
 
-  $('#gplus').addEventListener('click', (e) =>{
+$('#gplus').addEventListener('click', (e) =>{
     e.preventDefault();
     options.prefilltext = "Translate my morse code: " + message.value;
     gapi.interactivepost.render('gplus', options);
 });
-  // Call the render method when appropriate within your app to display
-  // the button.
-  gapi.interactivepost.render('gplus', options);
+
+gapi.interactivepost.render('gplus', options);
 
 
 
