@@ -1,18 +1,33 @@
 // FORMS
 // -----------------
-
 textarea {
 	width: 100%;
 	min-width: 100%;
 	background: none;
 	border: none;
-	border-top: 4px solid $black;
-	border-bottom: 4px solid $black;
+	border-top: 8px solid $black;
+	border-bottom: 8px solid $black;
 	padding: 20px 100px 20px 20px;
-	height: 150px;
-	font-size: 2em;
+	height: auto;
+	min-height: 220px;
+	font-size: 4em;
+	line-height: .8em;
 	font-family: $font-primary;
 	color: $black;
 	margin: 20px 0;
+	@media screen and (max-width: $phone), screen and (max-height: $phone) {
+		min-height: 120px;
+		font-size: 2em;
+		padding: 10px 60px 10px 20px;
+	}
+	@media (max-height: $phone-xs) {
+		min-height: 60px;
+		border-width: 4px;
+		margin: 5px 0;
+	}
+}
+
+textarea,
+button {
 	outline: none;
 }

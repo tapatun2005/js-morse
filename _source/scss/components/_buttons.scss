@@ -1,5 +1,8 @@
 // BUTTONS
 // -----------
+
+// General
+// ----------------
 button {
 	border: none;
 }
@@ -9,21 +12,32 @@ button {
 }
 
 .btn {
-	padding: 10px 20px;
+	padding: 15px 20px;
 	color: $yellow;
 	background: $black;
 	font-size: 1.2em;
 	font-family: $font-primary;
 	cursor: pointer;
 	margin: 0 10px 10px 0;
+	transition: all .2s ease-in-out;
+	&:hover {
+		background: $yellow;
+		color: $black;
+	}
+	@media screen and (max-width: $phone), screen and (max-height: $phone) {
+		padding: 10px;
+	}
 }
 
+
+// Close
+// ----------------------
 .close {
 	width: 60px;
 	height: 60px;
 	position: absolute;
 	top: 40px;
-	right:0;
+	right:20px;
 	cursor: pointer;
 	&:before, 
 	&:after {
@@ -40,5 +54,15 @@ button {
 	}
 	&:after {
 		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+	@media (max-width: $phone) {
+		width: 32px;
+		height: 32px;
+		top:30px;
+	}
+	@media (max-height: $phone-xs) {
+		width: 32px;
+		height: 32px;
+		top:20px;
 	}
 }

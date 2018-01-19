@@ -4,16 +4,22 @@ html(lang='en')
 		meta(charset="utf-8")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
-		title Talk in code
+		title Talk in code - .- .-.. -.- / .. -. / -.-. --- -.. .
 		meta(name="description" content="Translate your message into Morse Code and share it with your friends.")
 		link(rel="stylesheet", href="css/styles.min.css")
+		
 		//- OpenGraph
+		//- ---------------
 		meta(property="og:url" content="https://s3.amazonaws.com/js-morse-1/")
 		meta(property="og:type" content="website")
 		meta(property="og:title" content="Talk in Code")
 		meta(property="og:image" content="https://s3.amazonaws.com/js-morse-1/images/talkincode1.jpg")
 		meta(property="og:description" content="Translate your message into Morse Code and share it with your friends.")
+
 	body
+
+		//- Facebook UI
+		//- ----------------------
 		script.
 			window.fbAsyncInit = function() {
 				FB.init({
@@ -31,26 +37,35 @@ html(lang='en')
 				js.src = "https://connect.facebook.net/en_US/sdk.js";
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
+
+		//- Header
+		//- -------------------
 		header
 			.socials
 				.fb-like(data-href="https://s3.amazonaws.com/js-morse-1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false")
 				a(href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false")
 				g:plusone(href="https://s3.amazonaws.com/js-morse-1/index.html")
-				script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
 			.logo - .- .-.. -.- / .. -. / -.-. --- -.. .
-		main
-			h1.title Talk in code #[span - .- .-.. -.- / .. -. / -.-. --- -.. .]
-			p Translate your message into Morse Code and share it with your friends.</div>
 
+		//- Main
+		//- -------------------
+		main
 			.box
+				h1.title Talk in code #[span - .- .-.. -.- / .. -. / -.-. --- -.. .]
+				p Translate your message into Morse Code and share it with your friends.</div>
+
+			.box.box--nopadding
 				textarea(placeholder="Enter your message to be coded here")#message
 				span.close
-
-			button#submit.btn Translate my message to morse code
-			.btns#share.is-hidden
-				a(href="#").btn#facebook Facebook it
-				a(href="#").btn#twitter Tweet it
-				a(href="https://plus.google.com/share?url=https://s3.amazonaws.com/js-morse-1/index.html" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;").btn#gplus G+ it
-
+			
+			.box
+				button#submit.btn Translate my message to morse code
+				.btns#share.is-hidden
+					a(href="#" title="Facebook").btn#facebook Facebook it
+					a(href="#" title="Twitter").btn#twitter Tweet it
+					a(href="#").btn#gplus G+ it
+		//- SCripts
+		//- -------------------
+		script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
 		script(src="https://apis.google.com/js/platform.js" async defer)
 		script(src="js/app.min.js")

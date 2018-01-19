@@ -4,9 +4,13 @@
 	@extend %fx--wrap;
 	font-size: 4em;
 	margin: 0;
+	font-weight: 100;
 	span {
 		font-size: .5em;
 		margin-left: 10px;
 		white-space: nowrap;
+	}
+	@media screen and (max-width: $phone), screen and (max-height: $phablet) {
+		font-size: 3em;
 	}
 }

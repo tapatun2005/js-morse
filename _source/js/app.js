@@ -1,11 +1,12 @@
 const $ = (el) => document.querySelector(el);
 
-const message = $('#message');
-const morse = $('#morse');
-const close = document.querySelectorAll('.close');
+const message = $('#message'),
+      morse = $('#morse'),
+      close = document.querySelectorAll('.close'),
+      url = location.href;
 
 
-var alphabet = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.', 'g': '--.', 'h': '....', 'i': '..', 'j': '.---', 'k': '-.-', 'l': '.-..', 'm': '--', 'n': '-.', 'o': '---', 'p': '.--.', 'q': '--.-', 'r': '.-.', 's': '...', 't': '-', 'u': '..-', 'v': '...-', 'w': '.--', 'x': '-..-', 'y': '-.--', 'z': '--..'}
+const alphabet = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.', 'g': '--.', 'h': '....', 'i': '..', 'j': '.---', 'k': '-.-', 'l': '.-..', 'm': '--', 'n': '-.', 'o': '---', 'p': '.--.', 'q': '--.-', 'r': '.-.', 's': '...', 't': '-', 'u': '..-', 'v': '...-', 'w': '.--', 'x': '-..-', 'y': '-.--', 'z': '--..'}
 
 // Translate
 // ---------------------
@@ -34,82 +35,57 @@ function translate(sentence) {
    			}).join(' ').replace(/ +/g, ' ');
 }
 
-// SOCIAL DYNAMIC
+// Facebook Button
 // --------------------------------
 $('#facebook').addEventListener('click', (e)=>{
     e.preventDefault();
-
     FB.ui({
       method: 'share_open_graph',
       action_type: 'og.shares',
       action_properties: JSON.stringify({
         object: {
-          'og:url': "https://s3.amazonaws.com/js-morse-1",
+          'og:url': url,
           'og:title': "Talk in Code",
-          'og:description': message.value
+          'og:description': message.value + " translate it at",
+          "og:image": "https://s3.amazonaws.com/js-morse-1/images/talkincode1.jpg"
         }
       })
     },
     function (response) {});
 });
 
+
+// Twitter Button
+// --------------------
 $('#twitter').addEventListener('click', (e) =>{
     e.preventDefault();
-    var url = location.href;
-    var text = message.value + " translate it at";
-    $('#twitter').setAttribute('href', 'https://twitter.com/intent/tweet?text='+ text + "&url=" + url);
-    var width  = 575,
-        height = 400,
-        left   = (window.innerWidth  - width)  / 2,
-        top    = (window.innerHeight - height) / 2,
-        url    = $('#twitter').href,
-        opts   =    'status=1' +
-                    ',width='  + width  +
-                    ',height=' + height +
-                    ',top='    + top    +
-                    ',left='   + left;
 
-    window.open(url, 'twitter-share', opts);
+    $('#twitter').setAttribute('href', 'https://twitter.com/intent/tweet?text='+ message.value + " translate it at" + "&url=" + url);
     return false;
 });
 
 
-$('#gplus').addEventListener('click', (e) =>{
-    
+// G+ Button
+// -----------------------
+var options = {
+    contenturl: 'https://s3.amazonaws.com/js-morse-1/index.html',
+    contentdeeplinkid: '/pages',
+    clientid: '815714469419-8im790ooeco7jcof0tpj8qvonq3hqlgs.apps.googleusercontent.com',
+    cookiepolicy: 'single_host_origin',
+    prefilltext: 'Talk in Code',
+    calltoactionlabel: 'CREATE',
+    calltoactionurl: 'http://plus.google.com/pages/create',
+    calltoactiondeeplinkid: '/pages/create'
+  };
+
+  $('#gplus').addEventListener('click', (e) =>{
+    e.preventDefault();
+    options.prefilltext = "Translate my morse code: " + message.value;
+    gapi.interactivepost.render('gplus', options);
 });
-
-
-
-
-
-
-// SOCIAL
-// ---------------------------------
-// function postToTwitter(e) {
-//     e.preventDefault();
-//     var params = {
-//         text: "Hello",         
-//         url: "url",
-//     };
-    
-//     element.prop('href', 'https://twitter.com/intent/tweet?' + $.param(params));
-//     var width  = 575,
-//         height = 400,
-//         left   = ($(window).width()  - width)  / 2,
-//         top    = ($(window).height() - height) / 2,
-//         url    = this.href,
-//         opts   =    'status=1' +
-//                     ',width='  + width  +
-//                     ',height=' + height +
-//                     ',top='    + top    +
-//                     ',left='   + left;
-
-//     window.open(url, 'twitter-share', opts);
-
-//     return false;
-//     //https://twitter.com/intent/tweet?text=What would you make rose gold? Join in %23makeitrosegold for your chance to win your own rose gold watch&amp;url=http://www.watchwarehouse.co.uk/blog/make-it-rose-gold/
-// }
-
+  // Call the render method when appropriate within your app to display
+  // the button.
+  gapi.interactivepost.render('gplus', options);
 
 
 

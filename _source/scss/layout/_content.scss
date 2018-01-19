@@ -6,8 +6,15 @@ main {
 	max-width: 970px;
 	margin: 0 auto;
 	padding: 100px 20px 20px;
+	@media screen and (max-width: $phone), screen and (max-height: $phone) {
+		padding-top: 60px;
+	}
 }
 
 .box {
 	position: relative;
+	padding: 0 20px;
+	&--nopadding {
+		padding: 0;
+	}
 }

@@ -1,7 +1,6 @@
 // VARIABLES
 // ---------------
 
-
 // Colours
 // ---------------
 $white: #fff;
@@ -11,6 +10,12 @@ $yellow: #f6c500;
 
 // Typography
 // ---------------
-$font-size: 16px;
 $font-primary: "Bebas Neue";
 $font-secondary: "Roboto";
+
+// Screens
+// ----------------------
+$tablet: 767px;
+$phablet: 620px;
+$phone: 480px;
+$phone-xs: 380px;
