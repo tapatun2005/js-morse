@@ -15,6 +15,8 @@ body {
 	background: url(../images/bg.jpg) no-repeat center;
 	background-size: cover;
 	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
 	@media screen and (max-width: $phone), screen and (max-height: $phone) {
 		font-size: 14px;
 	}
